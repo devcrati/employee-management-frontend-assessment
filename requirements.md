@@ -17,7 +17,7 @@ Your task is to implement some UI features of a employee management system. Plan
 
 First, the system should display a dashboard with employee cards (containing their name and position) organized into 3 departments: `Onboarding`, `General Management Department`, and `Sales and Marketing Department`. For this level, implement functionality to render the dashboard from JSON objects containing employee data. The result should look as follows:
 
-![Level 1](level1.mp4)
+Check `level1.mp4` (/public)
 
 This is the HTML template for an employee card (note that it's pure HTML, and you might need to convert it to your framework's template syntax):
 
@@ -42,18 +42,18 @@ Scenario: Displaying employee cards in the appropriate section on the dashboard
 
 The system should allow the user to add new employees to the dashboard. For this level, implement functionality to support such user input via an `Add a new employee` form. The following video shows the expected behavior of this form:
 
-![Level 2](level2.mp4)
+Check `level2.mp4` (/public)
 
 This is the HTML template for `Add a new employee` form:
 
 ```html
 <div class="add-employee-form">
-    <form>
-        <input name="firstName" placeholder="First Name" />
-        <input name="lastName" placeholder="Last Name" />
-        <input name="position" placeholder="Position" />
-        <input type="submit" value="Add" />
-    </form>
+  <form>
+    <input name="firstName" placeholder="First Name" />
+    <input name="lastName" placeholder="Last Name" />
+    <input name="position" placeholder="Position" />
+    <input type="submit" value="Add" />
+  </form>
 </div>
 ```
 
@@ -86,6 +86,7 @@ For this level, instead of rendering the page using hardcoded data, implement fu
 - Departments API: `GET https://api-regional.codesignalcontent.com/employee-management-system/departments`
 
 Departments API response example
+
 ```
 [
     {
@@ -121,13 +122,13 @@ Some employees may be deleted, so their cards should not be displayed.
 
 After completing this level, the rendered dashboard should look as follows:
 
-![Level 3](level3.mp4)
+Check `level3.mp4` (/public)
 
 ## Acceptance Criteria
 
 ```
 Scenario: Using the Departments API
-    Given Departments API returns a JSON with departments data    
+    Given Departments API returns a JSON with departments data
     When Dashboard is rendered
     Then All departments are displayed
 ```
@@ -152,7 +153,7 @@ Scenario: Not displaying nonexistent employees
 
 Users should be able to move employees between departments. For this level, implement functionality to move employees by adding a "Department" dropdown menu to each employee card. The following video shows the expected behavior of this dropdown menu:
 
-![Level 4](level4.mp4)
+Check `level4.mp4` (/public)
 
 This is the `updated` HTML template for an employee card with the "Department" dropdown:
 
@@ -161,13 +162,21 @@ This is the `updated` HTML template for an employee card with the "Department" d
   <h4 class="employee__name">Peter Miller</h4>
   <select class="employee__select-btn" name="department">
     <option value="6195254f-ea6c-456b-a95c-6415422e436e">Onboarding</option>
-    <option value="6a7b4d56-c278-4d33-ae69-2bdd6e19503f">General Management Department</option>
-    <option value="1cfddf69-d2b9-4682-b1c5-d9da61c1a743">Sales and Marketing Department</option>
+    <option value="6a7b4d56-c278-4d33-ae69-2bdd6e19503f">
+      General Management Department
+    </option>
+    <option value="1cfddf69-d2b9-4682-b1c5-d9da61c1a743">
+      Sales and Marketing Department
+    </option>
     <option value="9594748d-2b9d-4a96-8041-b5401994d322">HR Department</option>
-    <option value="2503ece9-80af-477b-88ed-59808950c0d1">Finance Department</option>
-    <option value="b6ca1832-e61a-4920-a019-0381763459bb">Engineering Department</option>
+    <option value="2503ece9-80af-477b-88ed-59808950c0d1">
+      Finance Department
+    </option>
+    <option value="b6ca1832-e61a-4920-a019-0381763459bb">
+      Engineering Department
+    </option>
   </select>
-  <span class="employee__position">Trainee</span>  
+  <span class="employee__position">Trainee</span>
 </div>
 ```
 
