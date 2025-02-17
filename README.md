@@ -1,5 +1,12 @@
 # xAI Frontend Framework Assessment
 
+## Demo
+
+
+https://github.com/user-attachments/assets/1e766045-70f6-413d-90b6-103ee70278b0
+
+
+
 ## Overview
 
 This project is a frontend framework assessment for an employee management system. It is built using React and Vite, and it involves implementing various UI features across multiple levels of complexity.
