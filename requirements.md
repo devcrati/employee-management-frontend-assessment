@@ -19,6 +19,10 @@ First, the system should display a dashboard with employee cards (containing the
 
 Check `level1.mp4` (/public)
 
+https://github.com/user-attachments/assets/504f1ca5-cc6e-4164-9c7e-c53c9a706cb6
+
+
+
 This is the HTML template for an employee card (note that it's pure HTML, and you might need to convert it to your framework's template syntax):
 
 ```html
@@ -43,6 +47,11 @@ Scenario: Displaying employee cards in the appropriate section on the dashboard
 The system should allow the user to add new employees to the dashboard. For this level, implement functionality to support such user input via an `Add a new employee` form. The following video shows the expected behavior of this form:
 
 Check `level2.mp4` (/public)
+
+
+https://github.com/user-attachments/assets/1f914912-9b61-424c-bf3e-05eb308b8e57
+
+
 
 This is the HTML template for `Add a new employee` form:
 
@@ -124,6 +133,11 @@ After completing this level, the rendered dashboard should look as follows:
 
 Check `level3.mp4` (/public)
 
+
+https://github.com/user-attachments/assets/545c4730-ad96-4ad0-ad1b-2e8a50a00fc1
+
+
+
 ## Acceptance Criteria
 
 ```
@@ -154,6 +168,12 @@ Scenario: Not displaying nonexistent employees
 Users should be able to move employees between departments. For this level, implement functionality to move employees by adding a "Department" dropdown menu to each employee card. The following video shows the expected behavior of this dropdown menu:
 
 Check `level4.mp4` (/public)
+
+
+https://github.com/user-attachments/assets/718e7f36-78cd-4485-b4b3-f09b8b293d8a
+
+
+
 
 This is the `updated` HTML template for an employee card with the "Department" dropdown:
 
