@@ -1,15 +1,45 @@
 import { v4 as uuidv4 } from "uuid";
 import departments from "./departmentData.json";
 import "./index.scss";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import DepartmentCard from "./DepartmentCard";
 import AddEmployeeForm from "./AddEmployeeForm";
 
 const App = () => {
-  const [employees, setEmployees] = useState(departments[0].employees);
+  const [departments, setDepartments] = useState([]);
+  const [newEmployees, setNewEmployees] = useState([]);
+
+  const fetchDepartments = async () => {
+    try {
+      const response = await fetch('https://api-regional.codesignalcontent.com/employee-management-system/departments');
+      const data = await response.json();
+
+      for (const department of data) {
+        department.employees = await Promise.all(
+          department.employees.map(async (employee) => {            
+            try {
+              const employeeResponse = await fetch(`https://api-regional.codesignalcontent.com/employee-management-system/employees/${employee}`).then(res => res.json()).catch(err => null);
+              return employeeResponse;
+            } catch (err) {
+              return null;
+            }
+          })
+        ).then(employees => employees.filter(employee => employee !== null)); // Filter out null values
+      }
+
+      setDepartments(data);
+    } catch (error) {
+      console.error("Error fetching departments:", error);
+    }
+  };
+
+
+  useEffect(() => {
+    fetchDepartments();
+  }, []);
 
   const onSubmit = (value) => {
-    setEmployees((prev) => [
+    setNewEmployees((prev) => [
       ...prev,
       {
         id: uuidv4(),
@@ -18,6 +48,27 @@ const App = () => {
     ]);
   };
 
+  const changeDepartment = (employee, departmentId, newDepartmentId) => {
+    setDepartments(prev => prev.map(department => {
+      if (department.id === departmentId) {
+        return {
+          ...department,
+          employees: department.employees.filter(item => item.id !== employee.id),
+        }
+      }
+
+      if (department.id === newDepartmentId) {
+        return {
+          ...department,
+          employees: [...department.employees, employee],
+        }
+      }
+
+      return department;
+    }))
+  }
+
+
   return (
     <main>
       <h2>Add a new employee</h2>
@@ -25,21 +76,18 @@ const App = () => {
 
       <h2>Departments</h2>
       <div className="departments-container">
-        <DepartmentCard
-          title={departments[0].title}
-          description={departments[0].description}
-          employees={employees}
-        />
-        <DepartmentCard
-          title={departments[1].title}
-          description={departments[1].description}
-          employees={departments[1].employees}
-        />
-        <DepartmentCard
-          title={departments[2].title}
-          description={departments[2].description}
-          employees={departments[2].employees}
-        />
+        {departments.map((item, index) => (
+          <DepartmentCard
+            key={item.id}
+            title={item.title}
+            description={item.description}
+            employees={item.employees}
+            id={item.id}
+            newEmployees={index === 0 ? newEmployees : []}
+            departments={departments}
+            changeDepartment={changeDepartment}
+          />
+        ))}
       </div>
     </main>
   );

@@ -8,7 +8,13 @@ const AddEmployeeForm = ({ onSubmit }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (firstName !== "" && lastName !== "" && position !== "")
+    {
+      setFirstName("");
+      setLastName("");
+      setPosition("");
       onSubmit({ firstName, lastName, position });
+    }
+    
   };
 
   return (
