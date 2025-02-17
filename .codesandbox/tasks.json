@@ -30,6 +30,22 @@
     "install": {
       "name": "install dependencies",
       "command": "pnpm install"
+    },
+    "test1": {
+      "name": "test1",
+      "command": "pnpm test1"
+    },
+    "test2": {
+      "name": "test2",
+      "command": "pnpm test2"
+    },
+    "test3": {
+      "name": "test3",
+      "command": "pnpm test3"
+    },
+    "test4": {
+      "name": "test4",
+      "command": "pnpm test4"
     }
   }
 }
