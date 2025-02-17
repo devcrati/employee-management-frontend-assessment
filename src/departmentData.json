@@ -1,0 +1,53 @@
+[
+    {
+        "id": "6195254f-ea6c-456b-a95c-6415422e436e",
+        "title": "Onboarding",
+        "description": "This section contains 'employees' who didn't complete their onboarding process and thus are not assigned to any particular department yet.",
+        "employees": [
+            {
+                "id": "b3ad9acd-22b4-4ec1-8227-8060f002b89f",
+                "firstName": "Peter",
+                "lastName": "Miller",
+                "position": "Trainee"
+            }
+        ]
+    },
+    {
+        "id": "6a7b4d56-c278-4d33-ae69-2bdd6e19503f",
+        "title": "General Management Department",
+        "description": "Development and execution of business strategies.",
+        "employees": [
+            {
+                "id": "a9f39c40-b073-11ec-b909-0242ac120002",
+                "firstName": "Philip",
+                "lastName": "Hilton",
+                "position": "CEO"
+            },
+            {
+                "id": "a5caa712-b073-11ec-b909-0242ac120002",
+                "firstName": "Lynda",
+                "lastName": "Olson",
+                "position": "CTO"
+            }
+        ]
+    },
+    {
+        "id": "1cfddf69-d2b9-4682-b1c5-d9da61c1a743",
+        "title": "Sales and Marketing Department",
+        "description": "Identifying customer needs and selling relevant products to customers.",
+        "employees": [
+            {
+                "id": "f9f6757f-c07e-46d7-ae93-21cbe1f9980b",
+                "firstName": "Donovan",
+                "lastName": "Marsh",
+                "position": "SVP of Sales and Marketing"
+            },
+            {
+                "id": "e2cc07b6-fb29-490e-b2c6-40c2cd5a1805",
+                "firstName": "Ivy",
+                "lastName": "Richmond",
+                "position": "Marketing Manager"
+            }
+        ]
+    }
+]

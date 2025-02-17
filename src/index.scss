@@ -1,0 +1,113 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background-color: rgb(0, 121, 191);
+}
+
+main {
+  font-family: sans-serif;
+
+  h2 {
+    color: white;
+    font-weight: 700;
+  }
+
+  .departments-container {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+
+    .department__title {
+    }
+
+    .department__description {
+    }
+
+    .department {
+      width: 100%;
+      background-color: rgb(235, 236, 240);
+      border-radius: 3px;
+      padding: 10px;
+
+      .department__employees {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .employee {
+          background-color: white;
+          box-shadow: rgba(9, 30, 66, 0.25) 0 1px 0 0;
+          padding: 6px 10px;
+          border-radius: 3px;
+          position: relative;
+
+          .employee__description {
+            overflow-wrap: break-word;
+            overflow-x: hidden;
+          }
+
+          .employee__select-btn {
+            display: block;
+            margin: -10px 0 10px;
+            font-family: sans-serif;
+            border-radius: 3px;
+            border: 1px solid grey;
+            background: rgb(255, 255, 255);
+            padding: 2px;
+            font-size: 12px;
+          }
+
+          .employee__select-btn:hover {
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+
+  .add-employee-form {
+    .add-employee-form__title {
+      color: white;
+      font-weight: 700;
+    }
+
+    form {
+      width: calc((100% - 20px) / 3);
+      min-width: 250px;
+      padding: 10px 0 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      input[type='submit']:hover {
+        cursor: pointer;
+        background-color: rgba(255, 255, 255, 0.9);
+      }
+
+      input {
+        width: 100%;
+        font-family: sans-serif;
+        border-radius: 3px;
+        border: none;
+        background: rgb(255, 255, 255);
+        padding: 5px;
+        font-size: 14px;
+      }
+
+      input[type='submit'] {
+        font-size: 16px;
+        border: none;
+        color: rgb(0, 0, 0);
+        border-radius: 3px;
+        padding: 10px 20px;
+        background-color: rgb(255, 255, 255);
+      }
+
+      textarea {
+        height: 100px;
+      }
+    }
+  }
+}
